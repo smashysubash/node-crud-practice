@@ -1,9 +1,9 @@
 const express = require('express')
 const port = 3000
 const app = express()
-
+const bodyparser = require('body-parser')
 require('dotenv').config()
-
+app.use(bodyparser.json())
 const mongoose = require('mongoose')
 mongoose.connect(process.env.URL)
 const database = mongoose.connection
